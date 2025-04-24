@@ -2411,3 +2411,130 @@ st.markdown("""
     <span class="print-icon">🖨️</span>
 </button>
 """, unsafe_allow_html=True)
+
+# Add this CSS specifically for metrics table styling
+st.markdown("""
+<style>
+    /* Base table styles */
+    div[data-testid="stTable"] table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 1rem 0;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Header cells */
+    div[data-testid="stTable"] th {
+        background: linear-gradient(135deg, #155799, #159957);
+        color: white !important;
+        font-weight: 600;
+        padding: 12px 24px;
+        text-align: left;
+        font-size: 1rem;
+        border: none;
+    }
+
+    /* Data cells */
+    div[data-testid="stTable"] td {
+        padding: 12px 24px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        color: #333;
+        font-size: 0.95rem;
+        background: white;
+    }
+
+    /* Row hover effect */
+    div[data-testid="stTable"] tr:hover td {
+        background-color: rgba(21, 87, 153, 0.05);
+    }
+
+    /* Last row - remove bottom border */
+    div[data-testid="stTable"] tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* First column styling */
+    div[data-testid="stTable"] td:first-child {
+        font-weight: 500;
+        color: #155799;
+    }
+
+    /* Numeric columns alignment */
+    div[data-testid="stTable"] td:not(:first-child) {
+        text-align: center;
+    }
+
+    /* Mobile responsiveness */
+    @media screen and (max-width: 768px) {
+        div[data-testid="stTable"] table {
+            font-size: 14px;
+        }
+        
+        div[data-testid="stTable"] th,
+        div[data-testid="stTable"] td {
+            padding: 8px 12px;
+        }
+    }
+
+    /* Ensure text contrast */
+    div[data-testid="stTable"] {
+        color: #333 !important;
+    }
+
+    /* Add zebra striping for better readability */
+    div[data-testid="stTable"] tr:nth-child(even) td {
+        background: rgba(247, 250, 252, 0.6);
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# When displaying metrics table, use st.table instead of dataframe
+metrics_df = pd.DataFrame([rf_metrics, lr_metrics], 
+                         index=["Random Forest", "Logistic Regression"])
+metrics_df = metrics_df.round(3)
+
+# Add a container for better styling
+st.markdown("""
+<div style="
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+">
+    <h3 style="
+        color: #155799;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 1.5rem;
+    ">Model Performance Metrics</h3>
+</div>
+""", unsafe_allow_html=True)
+
+# Display the table
+st.table(metrics_df)
+
+# Add explanatory text below the table
+st.markdown("""
+<div style="
+    background: rgba(21, 87, 153, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #333;
+">
+    <strong>Metrics Explanation:</strong>
+    <ul style="margin-top: 10px; margin-bottom: 0;">
+        <li><strong>Accuracy:</strong> Overall prediction accuracy</li>
+        <li><strong>Precision:</strong> Proportion of correct positive predictions</li>
+        <li><strong>Recall:</strong> Proportion of actual positives correctly identified</li>
+        <li><strong>F1 Score:</strong> Harmonic mean of precision and recall</li>
+        <li><strong>AUC:</strong> Area Under the ROC Curve</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
