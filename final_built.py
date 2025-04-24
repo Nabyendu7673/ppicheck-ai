@@ -2423,49 +2423,41 @@ st.markdown("""
         border-radius: 10px;
         overflow: hidden;
         margin: 1rem 0;
-        background: white;
+        background: #f8f9fa;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     /* Header cells */
     div[data-testid="stTable"] th {
-        background: linear-gradient(135deg, #155799, #159957);
+        background: #1e2a3a;  /* Dark navy blue */
         color: white !important;
-        font-weight: 600;
+        font-weight: 500;
         padding: 12px 24px;
         text-align: left;
-        font-size: 1rem;
+        font-size: 0.9rem;
         border: none;
     }
 
-    /* Data cells */
-    div[data-testid="stTable"] td {
-        padding: 12px 24px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        color: #333;
-        font-size: 0.95rem;
-        background: white;
-    }
-
-    /* Row hover effect */
-    div[data-testid="stTable"] tr:hover td {
-        background-color: rgba(21, 87, 153, 0.05);
-    }
-
-    /* Last row - remove bottom border */
-    div[data-testid="stTable"] tr:last-child td {
-        border-bottom: none;
-    }
-
-    /* First column styling */
+    /* First column (model names) */
     div[data-testid="stTable"] td:first-child {
+        background: #1e2a3a;  /* Dark navy blue */
+        color: white !important;
         font-weight: 500;
-        color: #155799;
+        padding: 12px 24px;
     }
 
-    /* Numeric columns alignment */
+    /* Data cells */
     div[data-testid="stTable"] td:not(:first-child) {
+        padding: 12px 24px;
+        background: white;
+        color: #333;
+        font-size: 0.9rem;
         text-align: center;
+    }
+
+    /* Alternating row colors */
+    div[data-testid="stTable"] tr:nth-child(even) td:not(:first-child) {
+        background: #f8f9fa;
     }
 
     /* Mobile responsiveness */
@@ -2479,16 +2471,6 @@ st.markdown("""
             padding: 8px 12px;
         }
     }
-
-    /* Ensure text contrast */
-    div[data-testid="stTable"] {
-        color: #333 !important;
-    }
-
-    /* Add zebra striping for better readability */
-    div[data-testid="stTable"] tr:nth-child(even) td {
-        background: rgba(247, 250, 252, 0.6);
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -2497,31 +2479,13 @@ metrics_df = pd.DataFrame([rf_metrics, lr_metrics],
                          index=["Random Forest", "Logistic Regression"])
 metrics_df = metrics_df.round(3)
 
-# Add a container for better styling
-st.markdown("""
-<div style="
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-">
-    <h3 style="
-        color: #155799;
-        margin-bottom: 15px;
-        text-align: center;
-        font-size: 1.5rem;
-    ">Model Performance Metrics</h3>
-</div>
-""", unsafe_allow_html=True)
-
 # Display the table
 st.table(metrics_df)
 
-# Add explanatory text below the table
+# Add explanatory text below the table in a subtle way
 st.markdown("""
 <div style="
-    background: rgba(21, 87, 153, 0.05);
+    background: #f8f9fa;
     padding: 15px;
     border-radius: 8px;
     margin-top: 15px;
