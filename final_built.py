@@ -2223,6 +2223,52 @@ st.markdown("""
 
 # Display metrics table with enhanced styling
 st.markdown("""
+<style>
+    /* Enhanced Table Styling */
+    .stTable {
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    }
+    
+    /* Column Headers */
+    .stTable thead th {
+        background-color: #0D1B2A !important;
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+        padding: 12px 16px !important;
+        border-bottom: 2px solid rgba(255,255,255,0.2) !important;
+        text-align: left !important;
+    }
+    
+    /* Row Headers (first column) */
+    .stTable tbody tr td:first-child {
+        background-color: #1B263B !important;
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+        padding: 12px 16px !important;
+        border-right: 2px solid rgba(255,255,255,0.2) !important;
+    }
+    
+    /* Data Cells */
+    .stTable tbody tr {
+        background-color: #FFFFFF !important;
+    }
+    
+    .stTable td {
+        padding: 10px 14px !important;
+        color: #333333 !important;
+        border-bottom: 1px solid #E0E1DD !important;
+    }
+    
+    /* Remove bottom border from last row */
+    .stTable tr:last-child td {
+        border-bottom: none !important;
+    }
+</style>
+
 <div style="
     background: rgba(255, 255, 255, 0.95);
     padding: 20px;
@@ -2237,7 +2283,7 @@ st.markdown("""
 # Create styled metrics table
 metrics_df = pd.DataFrame([rf_metrics, lr_metrics], index=["Random Forest", "Logistic Regression"])
 metrics_df = metrics_df.round(3)
-st.table(metrics_df.style.format("{:.3f}"))
+st.table(metrics_df)
 
 st.markdown("</div>", unsafe_allow_html=True)
 
