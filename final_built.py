@@ -39,9 +39,8 @@ def show_welcome_screen():
 if not st.session_state.show_main_app:
     show_welcome_screen()
 else:
-
-# Update the CSS section with more visible colors
-st.markdown("""
+    # Update the CSS section with more visible colors
+    st.markdown("""
 <style>
     /* Main sidebar container */
     section[data-testid="stSidebar"] {
