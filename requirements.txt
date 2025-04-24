@@ -1,11 +1,9 @@
 streamlit==1.22.0
 pandas==1.5.3
 numpy==1.23.5
-plotly==5.13.0
 scikit-learn==1.0.2
+plotly==5.13.0
 matplotlib==3.5.3
 graphviz==0.19.1
 imbalanced-learn==0.9.1
 streamlit-plotly-events==0.0.6
-scipy==1.9.3
-pillow==9.3.0
