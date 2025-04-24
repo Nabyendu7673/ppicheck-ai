@@ -11,23 +11,123 @@ from sklearn.metrics import roc_curve, roc_auc_score, accuracy_score, precision_
 import plotly.graph_objects as go
 import plotly.express as px
 from streamlit_plotly_events import plotly_events
-import plotly.graph_objects as go
-import plotly.express as px
-from streamlit_plotly_events import plotly_events
-from streamlit_plotly_events import plotly_events
-
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-import plotly.express as px
-from streamlit_plotly_events import plotly_events
-
-import random
 from imblearn.over_sampling import SMOTE
-
+import random
 import time
 
 # Page setup
-st.set_page_config(page_title="PPIcheck.ai Delta Built_1.0", layout="wide")
+st.set_page_config(
+    page_title="PPIcheck.ai Delta Built_1.0",
+    layout="wide",
+    initial_sidebar_state="collapsed"  # Collapse sidebar by default on mobile
+)
+
+# Add mobile-responsive CSS
+st.markdown("""
+<style>
+    /* Mobile Responsive Design */
+    @media (max-width: 768px) {
+        /* Adjust main container padding */
+        .main .block-container {
+            padding: 1rem !important;
+        }
+        
+        /* Make tables responsive */
+        .stTable {
+            width: 100% !important;
+            font-size: 14px !important;
+        }
+        
+        /* Adjust title container for mobile */
+        .title-container {
+            padding: 60px 20px !important;
+            min-height: 400px !important;
+        }
+        
+        .main-title {
+            font-size: 2.5em !important;
+        }
+        
+        .subtitle {
+            font-size: 1.1em !important;
+            padding: 0 20px !important;
+        }
+        
+        /* Adjust sidebar for mobile */
+        section[data-testid="stSidebar"] {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        
+        /* Make buttons more touch-friendly */
+        .stButton > button {
+            width: 100% !important;
+            padding: 15px !important;
+            font-size: 16px !important;
+        }
+        
+        /* Adjust input fields for mobile */
+        .stTextInput > div > div > input,
+        .stNumberInput > div > div > input,
+        .stSelectbox > div > div {
+            font-size: 16px !important;
+            padding: 10px !important;
+        }
+        
+        /* Make charts responsive */
+        .stPlotlyChart {
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        /* Adjust spacing for mobile */
+        .stMarkdown {
+            margin: 10px 0 !important;
+        }
+        
+        /* Make tables scrollable on mobile */
+        .stTable {
+            overflow-x: auto !important;
+            display: block !important;
+        }
+        
+        /* Adjust risk score display for mobile */
+        .risk-score-container {
+            padding: 15px !important;
+            margin: 10px 0 !important;
+        }
+        
+        /* Make flowchart responsive */
+        .graphviz {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+    
+    /* Additional mobile optimizations */
+    @media (max-width: 480px) {
+        .main-title {
+            font-size: 2em !important;
+        }
+        
+        .subtitle {
+            font-size: 1em !important;
+        }
+        
+        .stTable td, .stTable th {
+            padding: 8px !important;
+            font-size: 13px !important;
+        }
+        
+        /* Make buttons even more touch-friendly on small screens */
+        .stButton > button {
+            padding: 20px !important;
+            font-size: 18px !important;
+        }
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Update the CSS section with more visible colors
 st.markdown("""
