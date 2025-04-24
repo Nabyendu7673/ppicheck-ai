@@ -11,23 +11,34 @@ from sklearn.metrics import roc_curve, roc_auc_score, accuracy_score, precision_
 import plotly.graph_objects as go
 import plotly.express as px
 from streamlit_plotly_events import plotly_events
-import plotly.graph_objects as go
-import plotly.express as px
-from streamlit_plotly_events import plotly_events
-from streamlit_plotly_events import plotly_events
-
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-import plotly.express as px
-from streamlit_plotly_events import plotly_events
-
 import random
 from imblearn.over_sampling import SMOTE
-
 import time
 
 # Page setup
 st.set_page_config(page_title="PPIcheck.ai Delta Built_1.0", layout="wide")
+
+# Check if we should show the welcome screen or main app
+if 'show_main_app' not in st.session_state:
+    st.session_state.show_main_app = False
+
+def show_welcome_screen():
+    st.markdown("""
+    <div style="text-align: center; padding: 50px;">
+        <h1 style="font-size: 3em; color: #155799;">Welcome to PPIcheck.ai</h1>
+        <p style="font-size: 1.5em; margin: 30px 0;">India's First Indigenously-Built AI Tool for Optimizing PPI Therapy</p>
+        <p style="margin-bottom: 50px;">Click the button below to start using the application</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    if st.button("Start Application", key="start_app"):
+        st.session_state.show_main_app = True
+        st.experimental_rerun()
+
+if not st.session_state.show_main_app:
+    show_welcome_screen()
+else:
 
 # Update the CSS section with more visible colors
 st.markdown("""
