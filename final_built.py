@@ -11,9 +11,19 @@ from sklearn.metrics import roc_curve, roc_auc_score, accuracy_score, precision_
 import plotly.graph_objects as go
 import plotly.express as px
 from streamlit_plotly_events import plotly_events
+import plotly.graph_objects as go
+import plotly.express as px
+from streamlit_plotly_events import plotly_events
+from streamlit_plotly_events import plotly_events
+
 import matplotlib.pyplot as plt
-from imblearn.over_sampling import SMOTE
+import plotly.graph_objects as go
+import plotly.express as px
+from streamlit_plotly_events import plotly_events
+
 import random
+from imblearn.over_sampling import SMOTE
+
 import time
 
 # Page setup
