@@ -25,9 +25,10 @@ st.markdown("""
     /* Main sidebar container */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #0D1B2A 0%, #1B263B 50%, #415A77 100%) !important;
-        height: 100vh !important;
+        height: 100% !important;
         overflow-y: auto !important;
-        position: fixed !important;
+        position: relative !important;
+        max-height: 100vh !important;
     }
     
     /* Sidebar headers */
@@ -36,6 +37,7 @@ st.markdown("""
         padding-bottom: 2rem;
         height: auto !important;
         overflow-y: visible !important;
+        max-height: none !important;
     }
     
     section[data-testid="stSidebar"] h1, 
@@ -179,6 +181,33 @@ st.markdown("""
     .stTable td, .stTable th {
         text-align: left;
         vertical-align: middle;
+    }
+
+    /* Add smooth scrolling */
+    section[data-testid="stSidebar"] {
+        scroll-behavior: smooth !important;
+    }
+
+    /* Ensure proper spacing between elements */
+    section[data-testid="stSidebar"] > div {
+        padding-bottom: 2rem !important;
+    }
+
+    /* Fix for Streamlit deployment */
+    section[data-testid="stSidebar"] > div:first-child {
+        height: auto !important;
+        overflow-y: auto !important;
+    }
+
+    /* Ensure sidebar content is visible */
+    section[data-testid="stSidebar"] .element-container {
+        overflow: visible !important;
+    }
+
+    /* Fix for sidebar scrolling in deployed environment */
+    div[data-testid="stSidebar"] {
+        overflow-y: auto !important;
+        height: 100% !important;
     }
 </style>
 """, unsafe_allow_html=True)
