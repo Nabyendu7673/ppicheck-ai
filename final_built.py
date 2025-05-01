@@ -31,6 +31,32 @@ st.markdown("""
         max-height: 100vh !important;
     }
     
+    /* Custom scrollbar styling */
+    section[data-testid="stSidebar"]::-webkit-scrollbar {
+        width: 10px !important;
+    }
+    
+    section[data-testid="stSidebar"]::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 5px !important;
+    }
+    
+    section[data-testid="stSidebar"]::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-radius: 5px !important;
+        border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    section[data-testid="stSidebar"]::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    /* Firefox scrollbar styling */
+    section[data-testid="stSidebar"] {
+        scrollbar-width: thin !important;
+        scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1) !important;
+    }
+    
     /* Sidebar headers */
     section[data-testid="stSidebar"] .block-container {
         padding-top: 2rem;
