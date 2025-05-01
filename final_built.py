@@ -25,11 +25,17 @@ st.markdown("""
     /* Main sidebar container */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #0D1B2A 0%, #1B263B 50%, #415A77 100%) !important;
+        height: 100vh !important;
+        overflow-y: auto !important;
+        position: fixed !important;
     }
     
     /* Sidebar headers */
     section[data-testid="stSidebar"] .block-container {
         padding-top: 2rem;
+        padding-bottom: 2rem;
+        height: auto !important;
+        overflow-y: visible !important;
     }
     
     section[data-testid="stSidebar"] h1, 
