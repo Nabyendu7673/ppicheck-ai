@@ -30,33 +30,33 @@ st.markdown("""
         position: relative !important;
         max-height: 100vh !important;
     }
-    
+
     /* Custom scrollbar styling */
     section[data-testid="stSidebar"]::-webkit-scrollbar {
         width: 10px !important;
     }
-    
+
     section[data-testid="stSidebar"]::-webkit-scrollbar-track {
         background: rgba(255, 255, 255, 0.1) !important;
         border-radius: 5px !important;
     }
-    
+
     section[data-testid="stSidebar"]::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.3) !important;
         border-radius: 5px !important;
         border: 2px solid rgba(255, 255, 255, 0.1) !important;
     }
-    
+
     section[data-testid="stSidebar"]::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.5) !important;
     }
-    
+
     /* Firefox scrollbar styling */
     section[data-testid="stSidebar"] {
         scrollbar-width: thin !important;
         scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1) !important;
     }
-    
+
     /* Sidebar headers */
     section[data-testid="stSidebar"] .block-container {
         padding-top: 2rem;
@@ -65,9 +65,9 @@ st.markdown("""
         overflow-y: visible !important;
         max-height: none !important;
     }
-    
-    section[data-testid="stSidebar"] h1, 
-    section[data-testid="stSidebar"] h2, 
+
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
         color: #E0E1DD !important;
         font-size: 1.3em !important;
@@ -77,7 +77,7 @@ st.markdown("""
         border-bottom: 2px solid rgba(255,255,255,0.2);
         margin-bottom: 15px;
     }
-    
+
     /* Sidebar text and labels */
     section[data-testid="stSidebar"] .stMarkdown,
     section[data-testid="stSidebar"] label,
@@ -88,7 +88,7 @@ st.markdown("""
         font-size: 1em !important;
         font-weight: 500 !important;
     }
-    
+
     /* Sidebar input fields */
     section[data-testid="stSidebar"] input,
     section[data-testid="stSidebar"] .stSelectbox > div > div,
@@ -99,44 +99,44 @@ st.markdown("""
         color: #000000 !important;
         font-size: 1em !important;
     }
-    
+
     /* Sidebar selectbox */
     section[data-testid="stSidebar"] .stSelectbox > div {
         background-color: transparent !important;
     }
-    
+
     /* Sidebar tabs */
     section[data-testid="stSidebar"] .stTabs [data-baseweb="tab-list"] {
         background-color: rgba(255,255,255,0.1) !important;
         border-radius: 5px;
         padding: 5px;
     }
-    
+
     section[data-testid="stSidebar"] .stTabs [data-baseweb="tab"] {
         color: #E0E1DD !important;
         font-weight: 500 !important;
     }
-    
+
     section[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
         background-color: rgba(224, 225, 221, 0.2) !important;
         color: #FFFFFF !important;
     }
-    
+
     /* Sidebar checkboxes */
     section[data-testid="stSidebar"] .stCheckbox {
         color: #E0E1DD !important;
     }
-    
+
     section[data-testid="stSidebar"] .stCheckbox > label {
         font-size: 0.95em !important;
     }
-    
+
     /* Sidebar dividers */
     section[data-testid="stSidebar"] hr {
         border-color: rgba(255,255,255,0.2);
         margin: 20px 0;
     }
-    
+
     /* Warning messages in sidebar */
     section[data-testid="stSidebar"] .stAlert {
         background-color: rgba(255,183,77,0.2) !important;
@@ -330,7 +330,7 @@ st.markdown("""
         font-family: 'Arial', sans-serif;
         padding: 0 40px;
     }
-    
+
     .subtitle span {
         font-size: 0.8em;  /* Reduced from 0.9em */
         line-height: 1.4;
@@ -349,7 +349,7 @@ st.markdown("""
         font-size: 0.9em;
         line-height: 1.5;
     }
-    
+
     /* Add a gradient overlay at the bottom */
     .title-container::after {
         content: '';
@@ -400,7 +400,7 @@ st.markdown("""
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    
+
     /* Ensure the content below has proper spacing */
     .stMarkdown {
         margin-top: 3rem;
@@ -447,13 +447,13 @@ with guidelines_expander:
             'Route': ['Oral (tablet/cap)', 'Oral (tablet/cap)', 'Oral (tablet/cap)', 'IV', 'Oral (tablet/cap)'],
             'Standard Dose (mg)': [20, '15 (OTC)', 40, 40, 20],
             'Maximum Dose': ['40 twice daily', '90 twice daily*', '40 twice daily', '40 twice daily', '60 twice daily*'],
-            'Administration': ['Swallow whole with water', 'Swallow whole with water', 'Swallow whole with water', 
+            'Administration': ['Swallow whole with water', 'Swallow whole with water', 'Swallow whole with water',
                              'IV infusion as directed', 'Swallow whole with water'],
-            'Timing': ['At least 1 hour before meal', '30-60 min before meal', '30-60 min before meal', 
+            'Timing': ['At least 1 hour before meal', '30-60 min before meal', '30-60 min before meal',
                       'Meal timing not relevant', '30-60 min before meal']
         }
         df = pd.DataFrame(ppi_data)
-        
+
         # Display the table with custom styling
         st.dataframe(
             df,
@@ -486,7 +486,7 @@ with guidelines_expander:
             },
             use_container_width=True,
         )
-        
+
         # Add footnote
         st.markdown("""
             <p style="
@@ -503,7 +503,8 @@ with guidelines_expander:
         - **Acute conditions:** 4-8 weeks
         - **Chronic conditions:** Individualized
         - **Long-term use:** Regular review required
-        
+        - **Note:** Long-term PPI therapy is generally considered > 8 weeks or > 2 months.
+
         ### Special Populations
         - **Elderly patients:**
             - Consider lower doses
@@ -524,7 +525,7 @@ with guidelines_expander:
         - Consistent timing daily
         - Take with full glass of water
         - Avoid concurrent antacids
-        
+
         ### IV Administration
         - Follow institutional protocols
         - Monitor for injection site reactions
@@ -549,12 +550,20 @@ with col_demo2:
 bmi = patient_weight / ((patient_height/100) ** 2)
 st.sidebar.write(f"BMI: {bmi:.1f} kg/m²")
 
-# 3. Treatment History (removed Risk History section and renumbered)
+# 3. Treatment History (Revised)
 st.sidebar.markdown("---")
 st.sidebar.subheader("Treatment History")
-ppi_duration = st.sidebar.number_input("PPI Duration (months)", min_value=0, max_value=240, value=0)
-if ppi_duration > 12:
-    st.sidebar.warning("⚠️ Long-term PPI use detected")
+
+# Checkbox for previous history
+previous_ppi_history = st.sidebar.checkbox("Previous PPI Therapy History Present")
+
+# Conditional input for duration if history is present
+ppi_duration_days = 0
+if previous_ppi_history:
+    ppi_duration_days = st.sidebar.number_input("Oral PPI Therapy Duration (days)", min_value=0, max_value=3650, value=0) # Max 10 years in days
+    if ppi_duration_days > (8 * 30): # Check if duration is longer than ~8 weeks (long-term)
+        st.sidebar.warning("⚠️ History of long-term PPI use detected")
+
 
 # 4. Clinical Indications
 st.sidebar.markdown("---")
@@ -753,7 +762,7 @@ st.markdown("""
         border-radius: 4px;
         margin: 4px 0;
     }
-    
+
     /* Make all text bright white */
     section[data-testid="stSidebar"] .stCheckbox label,
     section[data-testid="stSidebar"] .stSelectbox label,
@@ -764,7 +773,7 @@ st.markdown("""
         color: #FFFFFF !important;
         font-weight: 500 !important;
     }
-    
+
     /* Tooltip text */
     section[data-testid="stSidebar"] [data-baseweb="tooltip"] {
         color: #FFFFFF !important;
@@ -775,13 +784,13 @@ st.markdown("""
         max-width: 300px !important;
         white-space: normal !important;
     }
-    
+
     /* Tab labels */
     section[data-testid="stSidebar"] .stTabs [data-baseweb="tab"] {
         color: #FFFFFF !important;
         font-weight: 500 !important;
     }
-    
+
     /* Selected tab */
     section[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
         background-color: rgba(255, 255, 255, 0.2) !important;
@@ -902,19 +911,19 @@ st.markdown("""
         transition: all 0.2s ease;
         position: relative;
     }
-    
+
     .guidelines-button:hover {
         background: linear-gradient(120deg, #233148, #4A6484);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     }
-    
+
     .guidelines-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 8px;
     }
-    
+
     .guidelines-label {
         color: #FFFFFF;
         font-size: 0.9em;
@@ -922,14 +931,14 @@ st.markdown("""
         letter-spacing: 0.3px;
         font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
-    
+
     .guidelines-label::after {
         content: "▼";
         margin-left: 8px;
         font-size: 0.8em;
         opacity: 0.8;
     }
-    
+
     .guidelines-badge {
         background: rgba(255, 255, 255, 0.15);
         color: #FFFFFF;
@@ -950,7 +959,7 @@ st.markdown("""
         line-height: 1.5;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
-    
+
     .guidelines-content h4 {
         color: #1B263B;
         font-size: 1.05em;
@@ -959,18 +968,18 @@ st.markdown("""
         padding-bottom: 4px;
         border-bottom: 1px solid rgba(27, 38, 59, 0.1);
     }
-    
+
     .guidelines-content h4:first-child {
         margin-top: 0;
     }
-    
+
     .drug-info {
         padding-left: 15px;
         margin-bottom: 12px;
         color: #333333;
         font-size: 0.95em;
     }
-    
+
     .note-text {
         font-size: 0.9em;
         color: #666666;
@@ -980,12 +989,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Antiplatelet section
+# Antiplatelet section - Updated with new drugs and details
 st.sidebar.markdown("""
     <div class="guidelines-button" onclick="this.nextElementSibling.click()">
         <div class="guidelines-header">
             <div class="guidelines-label">VIEW ANTIPLATELET GUIDELINES</div>
-            <div class="guidelines-badge">4 DRUGS</div>
+            <div class="guidelines-badge">9 DRUGS</div>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -995,41 +1004,84 @@ with st.sidebar.expander(""):
         <div class='guidelines-content'>
         <h4>1. Aspirin</h4>
         <div class='drug-info'>
-        • Lowest dose: 75 mg/day (antiplatelet)<br>
-        • Highest dose: 4,000 mg/day (analgesic)<br>
-        • Antiplatelet range: 75–325 mg/day<br>
-        • Route: Oral (PO)
+        • Route: Oral<br>
+        • Lowest Dose: 75 mg once daily<br>
+        • Highest Dose: 325 mg once daily<br>
+        • Gastric Risk: High
         </div>
-        
+
         <h4>2. Clopidogrel</h4>
         <div class='drug-info'>
-        • Lowest dose: 75 mg/day<br>
-        • Highest dose: 300–600 mg loading<br>
-        • Route: Oral (PO)
+        • Route: Oral<br>
+        • Lowest Dose: 75 mg once daily<br>
+        • Highest Dose: 300 mg loading dose<br>
+        • Gastric Risk: Moderate
         </div>
-        
+
         <h4>3. Ticagrelor</h4>
         <div class='drug-info'>
-        • Lowest dose: 60 mg BID<br>
-        • Highest dose: 90 mg BID<br>
-        • Route: Oral (PO)
+        • Route: Oral<br>
+        • Lowest Dose: 60 mg twice daily<br>
+        • Highest Dose: 180 mg loading dose<br>
+        • Gastric Risk: Moderate
         </div>
-        
+
         <h4>4. Prasugrel</h4>
         <div class='drug-info'>
-        • Lowest dose: 5 mg/day<br>
-        • Highest dose: 60 mg loading, 10 mg/day<br>
-        • Route: Oral (PO)
+        • Route: Oral<br>
+        • Lowest Dose: 5 mg once daily<br>
+        • Highest Dose: 60 mg loading; 10 mg maintenance<br>
+        • Gastric Risk: Moderate
+        </div>
+
+        <h4>5. Dipyridamole</h4>
+        <div class='drug-info'>
+        • Route: Oral<br>
+        • Lowest Dose: 75 mg twice daily<br>
+        • Highest Dose: 200 mg sustained release twice daily<br>
+        • Gastric Risk: Low
+        </div>
+
+        <h4>6. Ticlopidine</h4>
+        <div class='drug-info'>
+        • Route: Oral<br>
+        • Lowest Dose: 250 mg twice daily<br>
+        • Highest Dose: 500 mg daily<br>
+        • Gastric Risk: Moderate
+        </div>
+
+        <h4>7. Abciximab</h4>
+        <div class='drug-info'>
+        • Route: IV<br>
+        • Lowest Dose: 0.25 mg/kg bolus<br>
+        • Highest Dose: 0.125 mcg/kg/min infusion<br>
+        • Gastric Risk: Low
+        </div>
+
+        <h4>8. Eptifibatide</h4>
+        <div class='drug-info'>
+        • Route: IV<br>
+        • Lowest Dose: 180 mcg/kg bolus<br>
+        • Highest Dose: 2 mcg/kg/min infusion<br>
+        • Gastric Risk: Low
+        </div>
+
+        <h4>9. Tirofiban</h4>
+        <div class='drug-info'>
+        • Route: IV<br>
+        • Lowest Dose: 0.4 mcg/kg/min bolus + infusion<br>
+        • Highest Dose: 0.15 mcg/kg/min infusion<br>
+        • Gastric Risk: Low
         </div>
         </div>
     """, unsafe_allow_html=True)
 
-# Anticoagulant Section
+# Anticoagulant Section - Updated with new drugs and details
 st.sidebar.markdown("""
     <div class="guidelines-button" onclick="this.nextElementSibling.click()">
         <div class="guidelines-header">
             <div class="guidelines-label">VIEW ANTICOAGULANT GUIDELINES</div>
-            <div class="guidelines-badge">3 DRUGS</div>
+            <div class="guidelines-badge">6 DRUGS</div>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -1037,52 +1089,138 @@ st.sidebar.markdown("""
 with st.sidebar.expander(""):
     st.markdown("""
         <div class='guidelines-content'>
-        <h4>1. Warfarin</h4>
+        <h4>1. Unfractionated Heparin (UFH)</h4>
         <div class='drug-info'>
-        • Lowest dose: 1–2 mg/day<br>
-        • Highest dose: 10 mg/day<br>
-        • Route: Oral (PO)
+        • Route: IV / SC<br>
+        • Lowest Dose: 5,000 units bolus (IV) / 5,000 units SC q12h<br>
+        • Highest Dose: ~35,000 units/day infusion (IV)<br>
+        • Gastric Risk: Low
         </div>
-        
-        <h4>2. Heparin</h4>
+
+        <h4>2. Low Molecular Weight Heparin (LMWH) (Enoxaparin)</h4>
         <div class='drug-info'>
-        • Prophylaxis: 5,000 units SC q8-12h<br>
-        • Therapeutic: 10,000 units + 15–25 units/kg/hr<br>
-        • Route: IV, SC
+        • Route: SC<br>
+        • Lowest Dose: 20 mg once daily<br>
+        • Highest Dose: 1 mg/kg twice daily<br>
+        • Gastric Risk: Low to Moderate
         </div>
-        
-        <h4>3. Enoxaparin</h4>
+
+        <h4>3. Dalteparin</h4>
         <div class='drug-info'>
-        • Prophylaxis: 30 mg SC daily<br>
-        • Therapeutic: 1 mg/kg SC q12h<br>
-        • Route: SC
+        • Route: SC<br>
+        • Lowest Dose: 2,500 IU once daily<br>
+        • Highest Dose: 200 IU/kg once daily<br>
+        • Gastric Risk: Low to Moderate
+        </div>
+
+        <h4>4. Fondaparinux</h4>
+        <div class='drug-info'>
+        • Route: SC<br>
+        • Lowest Dose: 2.5 mg once daily<br>
+        • Highest Dose: 10 mg once daily<br>
+        • Gastric Risk: Moderate
+        </div>
+
+        <h4>5. Argatroban</h4>
+        <div class='drug-info'>
+        • Route: IV<br>
+        • Lowest Dose: 0.5 mcg/kg/min infusion<br>
+        • Highest Dose: 10 mcg/kg/min infusion<br>
+        • Gastric Risk: Low
+        </div>
+
+        <h4>6. Bivalirudin</h4>
+        <div class='drug-info'>
+        • Route: IV<br>
+        • Lowest Dose: 0.75 mg/kg bolus + infusion<br>
+        • Highest Dose: 2.5 mg/kg/hr infusion<br>
+        • Gastric Risk: Low
         </div>
         </div>
     """, unsafe_allow_html=True)
 
-# Antiplatelet dose ranges dictionary
-antiplatelet_dose_ranges = {
-    "None": ([0], "", 0),
-    "Aspirin": ([0, 75, 150, 300, 325], "Usual: 75–325 mg/day for antiplatelet effect", 325),
-    "Clopidogrel": ([0, 75, 150, 300, 600], "Maintenance: 75 mg/day; Loading: 300-600 mg", 600),
-    "Ticagrelor": ([0, 60, 90, 180], "Maintenance: 60-90 mg twice daily", 180),
-    "Prasugrel": ([0, 5, 10, 60], "Maintenance: 5-10 mg/day; Loading: 60 mg", 60)
-}
+# Antiplatelet selection based on the new list
+antiplatelet_options = ["None", "Aspirin", "Clopidogrel", "Ticagrelor", "Prasugrel", "Dipyridamole", "Ticlopidine", "Abciximab", "Eptifibatide", "Tirofiban"]
+selected_antiplatelet = st.sidebar.selectbox("Select Antiplatelet", antiplatelet_options, key="antiplatelet_select")
 
-selected_antiplatelet = st.sidebar.selectbox("Select Antiplatelet", list(antiplatelet_dose_ranges.keys()), key="antiplatelet_select")
-antiplatelet_dose_options, antiplatelet_help, antiplatelet_max = antiplatelet_dose_ranges[selected_antiplatelet]
-antiplatelet_dose = st.sidebar.selectbox("Antiplatelet Dose (mg)", antiplatelet_dose_options, help=antiplatelet_help, key="antiplatelet_dose")
-antiplatelet_route = st.sidebar.selectbox("Antiplatelet Route", ["None", "Oral"], key="antiplatelet_route")
+# Conditional inputs for Antiplatelet dose and route based on selection
+antiplatelet_dose = 0
+antiplatelet_route = "None"
 
-selected_anticoagulant = st.sidebar.selectbox("Select Anticoagulant", ["None", "Warfarin", "Heparin", "Enoxaparin"], key="anticoag_select")
-anticoagulant_dose = st.sidebar.selectbox("Anticoagulant Dose", ["None", "Low Dose", "Moderate Dose", "High Dose"], key="anticoag_dose")
-anticoagulant_route = st.sidebar.selectbox("Anticoagulant Route", ["None", "Oral", "IV", "Subcutaneous"], key="anticoag_route")
+if selected_antiplatelet != "None":
+    if selected_antiplatelet == "Aspirin":
+        antiplatelet_dose = st.sidebar.selectbox("Aspirin Dose (mg)", [0, 75, 150, 300, 325], help="Antiplatelet doses")
+        antiplatelet_route = st.sidebar.selectbox("Aspirin Route", ["None", "Oral"])
+    elif selected_antiplatelet == "Clopidogrel":
+        antiplatelet_dose = st.sidebar.selectbox("Clopidogrel Dose (mg)", [0, 75, 300, 600], help="Maintenance: 75mg, Loading: 300-600mg")
+        antiplatelet_route = st.sidebar.selectbox("Clopidogrel Route", ["None", "Oral"])
+    elif selected_antiplatelet == "Ticagrelor":
+        antiplatelet_dose = st.sidebar.selectbox("Ticagrelor Dose (mg)", [0, 60, 90, 180], help="Maintenance: 60-90mg BID, Loading: 180mg")
+        antiplatelet_route = st.sidebar.selectbox("Ticagrelor Route", ["None", "Oral"])
+    elif selected_antiplatelet == "Prasugrel":
+        antiplatelet_dose = st.sidebar.selectbox("Prasugrel Dose (mg)", [0, 5, 10, 60], help="Maintenance: 5-10mg, Loading: 60mg")
+        antiplateplatelet_route = st.sidebar.selectbox("Prasugrel Route", ["None", "Oral"])
+    elif selected_antiplatelet == "Dipyridamole":
+        antiplatelet_dose = st.sidebar.selectbox("Dipyridamole Dose (mg)", [0, 75, 200], help="75mg BID or 200mg SR BID")
+        antiplatelet_route = st.sidebar.selectbox("Dipyridamole Route", ["None", "Oral"])
+    elif selected_antiplatelet == "Ticlopidine":
+        antiplatelet_dose = st.sidebar.selectbox("Ticlopidine Dose (mg)", [0, 250, 500], help="250mg BID or 500mg daily")
+        antiplatelet_route = st.sidebar.selectbox("Ticlopidine Route", ["None", "Oral"])
+    elif selected_antiplatelet == "Abciximab":
+        antiplatelet_dose = st.sidebar.number_input("Abciximab Dose (mg/kg)", min_value=0.0, step=0.01, format="%.2f", help="Bolus: 0.25 mg/kg, Infusion: 0.125 mcg/kg/min")
+        antiplatelet_route = st.sidebar.selectbox("Abciximab Route", ["None", "IV"])
+    elif selected_antiplatelet == "Eptifibatide":
+        antiplatelet_dose = st.sidebar.number_input("Eptifibatide Dose (mcg/kg)", min_value=0.0, step=0.01, format="%.2f", help="Bolus: 180 mcg/kg, Infusion: 2 mcg/kg/min")
+        antiplatelet_route = st.sidebar.selectbox("Eptifibatide Route", ["None", "IV"])
+    elif selected_antiplatelet == "Tirofiban":
+        antiplatelet_dose = st.sidebar.number_input("Tirofiban Dose (mcg/kg/min)", min_value=0.0, step=0.01, format="%.2f", help="Bolus + Infusion: 0.4 mcg/kg/min, Maintenance: 0.15 mcg/kg/min")
+        antiplatelet_route = st.sidebar.selectbox("Tirofiban Route", ["None", "IV"])
 
-# Scoring functions
+
+# Anticoagulant selection based on the new list
+anticoagulant_options = ["None", "Unfractionated Heparin (UFH)", "Low Molecular Weight Heparin (LMWH) (Enoxaparin)", "Dalteparin", "Fondaparinux", "Argatroban", "Bivalirudin"]
+selected_anticoagulant = st.sidebar.selectbox("Select Anticoagulant", anticoagulant_options, key="anticoag_select")
+
+# Conditional inputs for Anticoagulant dose and route based on selection
+anticoagulant_dose_value = 0 # Using a different variable name to avoid conflict with the selectbox label
+anticoagulant_route = "None"
+anticoagulant_regimen = "None" # Added for regimens like Prophylactic/Therapeutic
+
+if selected_anticoagulant != "None":
+    anticoagulant_route = st.sidebar.selectbox(f"{selected_anticoagulant} Route", ["None", "Oral", "IV", "Subcutaneous"])
+
+    if selected_anticoagulant == "Unfractionated Heparin (UFH)":
+        anticoagulant_regimen = st.sidebar.selectbox("UFH Regimen", ["None", "Prophylactic", "Therapeutic"])
+        if anticoagulant_regimen == "Prophylactic":
+             anticoagulant_dose_value = st.sidebar.selectbox("UFH Dose (units)", [0, 5000], help="5,000 units SC q8-12h")
+        elif anticoagulant_regimen == "Therapeutic":
+             anticoagulant_dose_value = st.sidebar.number_input("UFH Dose (units/hour infusion)", min_value=0, step=100, help="Typically 10,000 units bolus + 15-25 units/kg/hr infusion")
+    elif selected_anticoagulant == "Low Molecular Weight Heparin (LMWH) (Enoxaparin)":
+        anticoagulant_regimen = st.sidebar.selectbox("Enoxaparin Regimen", ["None", "Prophylactic", "Therapeutic"])
+        if anticoagulant_regimen == "Prophylactic":
+            anticoagulant_dose_value = st.sidebar.selectbox("Enoxaparin Dose (mg)", [0, 30, 40], help="30-40 mg SC daily")
+        elif anticoagulant_regimen == "Therapeutic":
+            anticoagulant_dose_value = st.sidebar.number_input("Enoxaparin Dose (mg/kg)", min_value=0.0, step=0.01, format="%.2f", help="1 mg/kg SC q12h or 1.5 mg/kg SC daily")
+    elif selected_anticoagulant == "Dalteparin":
+        anticoagulant_regimen = st.sidebar.selectbox("Dalteparin Regimen", ["None", "Prophylactic", "Therapeutic"])
+        if anticoagulant_regimen == "Prophylactic":
+            anticoagulant_dose_value = st.sidebar.selectbox("Dalteparin Dose (IU)", [0, 2500, 5000], help="2,500-5,000 IU SC daily")
+        elif anticoagulant_regimen == "Therapeutic":
+            anticoagulant_dose_value = st.sidebar.number_input("Dalteparin Dose (IU/kg)", min_value=0.0, step=0.01, format="%.2f", help="200 IU/kg SC once daily")
+    elif selected_anticoagulant == "Fondaparinux":
+         anticoagulant_dose_value = st.sidebar.selectbox("Fondaparinux Dose (mg)", [0, 2.5, 5, 7.5, 10], help="2.5mg once daily for prophylaxis, higher for treatment")
+    elif selected_anticoagulant == "Argatroban":
+         anticoagulant_dose_value = st.sidebar.number_input("Argatroban Dose (mcg/kg/min)", min_value=0.0, step=0.01, format="%.2f", help="Initial: 0.5 mcg/kg/min, Max: 10 mcg/kg/min")
+    elif selected_anticoagulant == "Bivalirudin":
+         anticoagulant_dose_value = st.sidebar.number_input("Bivalirudin Dose (mg/kg/hr)", min_value=0.0, step=0.01, format="%.2f", help="Bolus: 0.75 mg/kg, Infusion: 2.5 mg/kg/hr")
+
+
+# --- Scoring functions based on Dose, Route, and Regimen ---
 def get_nsaid_score(dose, max_dose, base_risk_score):
     if dose == 0 or dose == "None":
         return 0
-    
+
+    # NSAID scoring remains based on dose and base risk for now
     dose_percentage = (dose / max_dose) * 100
     if dose_percentage <= 25:
         return base_risk_score
@@ -1093,20 +1231,111 @@ def get_nsaid_score(dose, max_dose, base_risk_score):
     else:
         return base_risk_score + 3
 
-def get_antiplatelet_score(dose):
-    if dose == 0 or dose == "None":
+def get_antiplatelet_score(antiplatelet_agent, dose, route):
+    score = 0
+    if antiplatelet_agent == "None":
         return 0
-    elif dose <= 75:
-        return 1
-    elif dose <= 150:
-        return 2
-    elif dose <= 300:
-        return 3
-    else:
-        return 4
+
+    # Base score based on drug's inherent risk (can be adjusted based on dose/route)
+    base_risk_scores = {
+        "Aspirin": 2, # Start with a base score, dose/route will increase it
+        "Clopidogrel": 2,
+        "Ticagrelor": 2,
+        "Prasugrel": 2,
+        "Dipyridamole": 1,
+        "Ticlopidine": 2,
+        "Abciximab": 1,
+        "Eptifibatide": 1,
+        "Tirofiban": 1
+    }
+    score += base_risk_scores.get(antiplatelet_agent, 0)
+
+    # Adjust score based on dose and route
+    if antiplatelet_agent == "Aspirin":
+        if route == "Oral":
+            if dose > 150: # Higher doses increase risk
+                score += 2
+            elif dose > 75: # Moderate doses increase risk
+                score += 1
+    elif antiplatelet_agent in ["Clopidogrel", "Ticagrelor", "Prasugrel", "Ticlopidine"]:
+        if route == "Oral":
+            if dose >= 300: # Loading doses or higher maintenance doses
+                score += 2
+            elif dose >= 75: # Standard maintenance doses
+                score += 1
+    elif antiplatelet_agent in ["Abciximab", "Eptifibatide", "Tirofiban"]:
+         if route == "IV":
+             score += 2 # IV antiplatelets generally higher risk
+
+    return score
+
+def get_anticoagulant_score(anticoagulant_agent, dose_value, route, regimen):
+    score = 0
+    if anticoagulant_agent == "None":
+        return 0
+
+    # Base score based on drug's inherent risk (can be adjusted based on dose/route/regimen)
+    base_risk_scores = {
+        "Unfractionated Heparin (UFH)": 1,
+        "Low Molecular Weight Heparin (LMWH) (Enoxaparin)": 1,
+        "Dalteparin": 1,
+        "Fondaparinux": 2,
+        "Argatroban": 2,
+        "Bivalirudin": 2
+    }
+    score += base_risk_scores.get(anticoagulant_agent, 0)
+
+    # Adjust score based on dose, route, and regimen
+    if anticoagulant_agent == "Unfractionated Heparin (UFH)":
+        if route == "IV":
+            if regimen == "Therapeutic":
+                score += 3
+            elif regimen == "Prophylactic":
+                score += 1
+        elif route == "SC":
+             if regimen == "Prophylactic":
+                 score += 1
+    elif anticoagulant_agent == "Low Molecular Weight Heparin (LMWH) (Enoxaparin)":
+        if route == "Subcutaneous":
+            if regimen == "Therapeutic":
+                score += 3
+            elif regimen == "Prophylactic":
+                score += 1
+    elif anticoagulant_agent == "Dalteparin":
+        if route == "Subcutaneous":
+            if regimen == "Therapeutic":
+                score += 3
+            elif regimen == "Prophylactic":
+                score += 1
+    elif anticoagulant_agent == "Fondaparinux":
+        if route == "Subcutaneous":
+            if dose_value >= 5: # Higher doses increase risk
+                score += 2
+            elif dose_value > 0:
+                score += 1
+    elif anticoagulant_agent == "Argatroban":
+        if route == "IV":
+            if dose_value >= 5: # Higher infusion rates
+                score += 3
+            elif dose_value > 0:
+                score += 2
+    elif anticoagulant_agent == "Bivalirudin":
+        if route == "IV":
+            if dose_value >= 1.5: # Higher infusion rates
+                score += 3
+            elif dose_value > 0:
+                score += 2
+    # Add scoring for Warfarin, Heparin (generic) if they are added back
+    # elif anticoagulant_agent == "Warfarin":
+    #     if route == "Oral":
+    #         score += 3 # Warfarin generally higher risk than LMWH/UFH for GI bleed
+
+    return score
+
 
 def get_ppi_gastroprotection(dose, route, nsaid_flag, antiplatelet_flag, anticoagulant_flag):
     reduction = 0
+    # PPI reduction logic remains the same for now
     if nsaid_flag or antiplatelet_flag or anticoagulant_flag:
         if route == "Oral" and dose >= 20:
             reduction = -1
@@ -1125,7 +1354,7 @@ st.markdown("""
         justify-content: center;
         margin: 20px 0;
     }
-    
+
     .spinner {
         width: 50px;
         height: 50px;
@@ -1134,24 +1363,24 @@ st.markdown("""
         border-radius: 50%;
         animation: spin 1s linear infinite;
     }
-    
+
     .loading-text {
         margin-top: 15px;
         color: #155799;
         font-weight: 500;
         font-size: 1.1em;
     }
-    
+
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-    
+
     /* Fade In Animation */
     .fade-in {
         animation: fadeIn 0.5s ease-in;
     }
-    
+
     @keyframes fadeIn {
         0% { opacity: 0; }
         100% { opacity: 1; }
@@ -1176,44 +1405,38 @@ loading_placeholder.markdown("""
 # Simulate processing time (you can remove this in production)
 time.sleep(1)  # Simulate calculation time
 
-# Calculate scores (your existing calculation code)
-# NSAID score
+# Calculate scores
+# NSAID score (remains based on dose and base risk)
 if selected_nsaid != "None":
     try:
-        nsaid_dose = int(nsaid_dose)
-        if nsaid_dose > nsaid_max_dose:
+        nsaid_dose_val = int(nsaid_dose) # Use a different variable name
+        if nsaid_dose_val > nsaid_max_dose:
             st.sidebar.warning(f"Dose exceeds max recommended for {selected_nsaid}!")
-        nsaid_score = get_nsaid_score(nsaid_dose, nsaid_max_dose, nsaid_base_risk)
+        nsaid_score = get_nsaid_score(nsaid_dose_val, nsaid_max_dose, nsaid_base_risk)
     except ValueError:
         st.sidebar.error("Invalid NSAID dose input.")
         nsaid_score = 0
 else:
     nsaid_score = 0
 
-# Antiplatelet score
-if selected_antiplatelet != "None":
-    try:
-        antiplatelet_dose = int(antiplatelet_dose)
-        if antiplatelet_dose > antiplatelet_max:
-            st.sidebar.warning(f"Dose exceeds max recommended for {selected_antiplatelet}!")
-        antiplatelet_score = get_antiplatelet_score(antiplatelet_dose)
-    except ValueError:
-        st.sidebar.error("Invalid antiplatelet dose input.")
-        antiplatelet_score = 0
-else:
-    antiplatelet_score = 0
+# Antiplatelet score (now based on dose and route)
+antiplatelet_score = get_antiplatelet_score(selected_antiplatelet, antiplatelet_dose, antiplatelet_route)
 
-# Anticoagulant score
-anticoagulant_score = {"None": 0, "Low Dose": 1, "Moderate Dose": 2, "High Dose": 3}.get(anticoagulant_dose, 0)
+# Anticoagulant score (now based on dose, route, and regimen)
+anticoagulant_score = get_anticoagulant_score(selected_anticoagulant, anticoagulant_dose_value, anticoagulant_route, anticoagulant_regimen)
 
-# Interaction Alerts
+
+# Interaction Alerts (Review needed based on new drug lists)
+# Keeping existing alerts for now, but this section might need updates
 interaction_alert = ""
-if selected_antiplatelet == "Aspirin" and selected_anticoagulant == "Warfarin":
-    interaction_alert = "High bleeding risk: Aspirin + Warfarin."
-elif selected_antiplatelet == "Clopidogrel" and selected_anticoagulant == "Heparin":
-    interaction_alert = "Increased bleeding risk: Clopidogrel + Heparin."
-elif selected_antiplatelet == "Ticagrelor" and selected_anticoagulant == "Enoxaparin":
-    interaction_alert = "Monitor closely: Ticagrelor + Enoxaparin increases bleeding risk."
+# Updated interaction checks based on selected drugs
+if selected_antiplatelet == "Aspirin" and selected_anticoagulant != "None":
+    interaction_alert = f"High bleeding risk: Aspirin + {selected_anticoagulant}."
+elif selected_antiplatelet in ["Clopidogrel", "Ticagrelor", "Prasugrel", "Ticlopidine"] and selected_anticoagulant != "None":
+    interaction_alert = f"Increased bleeding risk: {selected_antiplatelet} + {selected_anticoagulant}."
+elif selected_antiplatelet in ["Abciximab", "Eptifibatide", "Tirofiban"] and selected_anticoagulant != "None":
+     interaction_alert = f"Monitor closely: {selected_antiplatelet} + {selected_anticoagulant} increases bleeding risk."
+
 
 if interaction_alert:
     st.markdown(f"""
@@ -1277,7 +1500,7 @@ antiplatelet_flag = int(selected_antiplatelet != "None")
 anticoagulant_flag = int(selected_anticoagulant != "None")
 triple_combo_flag = int(nsaid_flag and antiplatelet_flag and anticoagulant_flag)
 medication_risk = nsaid_score + antiplatelet_score + anticoagulant_score
-high_risk_flag = int(medication_risk >= 6 or indication_score >= 6)
+high_risk_flag = int(medication_risk >= 6 or indication_score >= 6) # Threshold might need adjustment with new scoring
 
 # Calculate PPI reduction
 ppi_reduction = get_ppi_gastroprotection(ppi_dose, ppi_route, nsaid_flag, antiplatelet_flag, anticoagulant_flag)
@@ -1292,7 +1515,7 @@ loading_placeholder.empty()
 # Enhanced PPI-specific recommendations
 def get_ppi_recommendations(current_ppi, current_dose, current_route, risk_score):
     recommendations = []
-    
+
     # Create DataFrames for all recommendation types
     if current_route == "IV":
         route_opt_data = {
@@ -1333,12 +1556,15 @@ def get_ppi_recommendations(current_ppi, current_dose, current_route, risk_score
 
     # Monitoring and Follow-up combined table
     if risk_score >= 7:
-        # Check if there's a drug interaction
-        has_interaction = (
-            (selected_antiplatelet == "Aspirin" and selected_anticoagulant == "Warfarin") or
-            (selected_antiplatelet == "Clopidogrel" and selected_anticoagulant == "Heparin") or
-            (selected_antiplatelet == "Ticagrelor" and selected_anticoagulant == "Enoxaparin")
-        )
+        # Check if there's a drug interaction (updated to check against the new drug lists)
+        has_interaction = False
+        if selected_antiplatelet == "Aspirin" and selected_anticoagulant != "None":
+             has_interaction = True
+        elif selected_antiplatelet in ["Clopidogrel", "Ticagrelor", "Prasugrel", "Ticlopidine"] and selected_anticoagulant != "None":
+             has_interaction = True
+        elif selected_antiplatelet in ["Abciximab", "Eptifibatide", "Tirofiban"] and selected_anticoagulant != "None":
+             has_interaction = True
+
 
         monitoring_data = {
             "Timeframe": [
@@ -1365,19 +1591,27 @@ def get_ppi_recommendations(current_ppi, current_dose, current_route, risk_score
         }
         st.markdown("\n📋 **Monitoring and Follow-up Plan:**")
         df_monitoring = pd.DataFrame(monitoring_data).set_index("Timeframe")
-        
+
         # Apply conditional styling
         def highlight_priority(val):
             if val == "High":
                 return 'background-color: #ffebee; color: #d32f2f'
             return ''
-        
+
         st.table(df_monitoring.style.applymap(highlight_priority, subset=['Priority']))
 
     return []  # Empty list as we're using direct st.table() display
 
+# Determine duration text based on new inputs
+if previous_ppi_history and ppi_duration_days > (8 * 30): # Long-term if history > ~8 weeks
+    duration_text = f"History of Long-term Oral PPI Therapy ({ppi_duration_days} days)"
+elif previous_ppi_history and ppi_duration_days > 0:
+     duration_text = f"History of Short-term Oral PPI Therapy ({ppi_duration_days} days)"
+else:
+    duration_text = "No History of Previous PPI Therapy"
+
+
 if score >= 10:
-    duration_text = "Long-term therapy (>8 months)" if ppi_duration > 8 else "Short-term therapy (≤8 months)"
     st.markdown(f"""
     <div style="
         background: linear-gradient(135deg, #8B0000, #DC143C);
@@ -1399,8 +1633,8 @@ if score >= 10:
             pointer-events: none;
         "></div>
         <h3 style="
-            color: white; 
-            margin: 0 0 10px 0; 
+            color: white;
+            margin: 0 0 10px 0;
             font-family: 'Arial', sans-serif;
             font-size: 1.4em;
             font-weight: 600;
@@ -1414,7 +1648,7 @@ if score >= 10:
             margin: 0;
             font-size: 1.1em;
             opacity: 0.9;
-        ">Duration Status: {duration_text}</p>
+        ">History: {duration_text}</p>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("""
@@ -1451,7 +1685,7 @@ if score >= 10:
     """, unsafe_allow_html=True)
 
 elif score >= 7:
-    duration_text = "Long-term therapy (>8 months)" if ppi_duration > 8 else "Short-term therapy (≤8 months)"
+    duration_text = f"History: {duration_text}" # Use the determined duration text
     st.markdown(f"""
     <div style="
         background: linear-gradient(135deg, #B22222, #FF4500);
@@ -1473,8 +1707,8 @@ elif score >= 7:
             pointer-events: none;
         "></div>
         <h3 style="
-            color: white; 
-            margin: 0 0 10px 0; 
+            color: white;
+            margin: 0 0 10px 0;
             font-family: 'Arial', sans-serif;
             font-size: 1.4em;
             font-weight: 600;
@@ -1488,7 +1722,7 @@ elif score >= 7:
             margin: 0;
             font-size: 1.1em;
             opacity: 0.9;
-        ">Duration Status: {duration_text}</p>
+        ">{duration_text}</p>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("""
@@ -1524,7 +1758,7 @@ elif score >= 7:
     """, unsafe_allow_html=True)
 
 elif 4 <= score < 7:
-    duration_text = "Long-term therapy (>8 months)" if ppi_duration > 8 else "Short-term therapy (≤8 months)"
+    duration_text = f"History: {duration_text}" # Use the determined duration text
     st.markdown(f"""
     <div style="
         background: linear-gradient(135deg, #1E90FF, #4169E1);
@@ -1546,8 +1780,8 @@ elif 4 <= score < 7:
             pointer-events: none;
         "></div>
         <h3 style="
-            color: white; 
-            margin: 0 0 10px 0; 
+            color: white;
+            margin: 0 0 10px 0;
             font-family: 'Arial', sans-serif;
             font-size: 1.4em;
             font-weight: 600;
@@ -1561,7 +1795,7 @@ elif 4 <= score < 7:
             margin: 0;
             font-size: 1.1em;
             opacity: 0.9;
-        ">Duration Status: {duration_text}</p>
+        ">{duration_text}</p>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("""
@@ -1587,7 +1821,7 @@ elif 4 <= score < 7:
     """, unsafe_allow_html=True)
 
 else:
-    duration_text = "Long-term therapy (>8 months)" if ppi_duration > 8 else "Short-term therapy (≤8 months)"
+    duration_text = f"History: {duration_text}" # Use the determined duration text
     st.markdown(f"""
     <div style="
         background: linear-gradient(135deg, #228B22, #32CD32);
@@ -1609,8 +1843,8 @@ else:
             pointer-events: none;
         "></div>
         <h3 style="
-            color: white; 
-            margin: 0 0 10px 0; 
+            color: white;
+            margin: 0 0 10px 0;
             font-family: 'Arial', sans-serif;
             font-size: 1.4em;
             font-weight: 600;
@@ -1624,7 +1858,7 @@ else:
             margin: 0;
             font-size: 1.1em;
             opacity: 0.9;
-        ">Duration Status: {duration_text}</p>
+        ">{duration_text}</p>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("""
@@ -1694,8 +1928,8 @@ st.subheader("PPI Deprescribing Flowchart")
 with st.expander("📊 View Detailed Deprescribing Flowchart"):
     def generate_ppi_flowchart(score, nsaid_score, antiplatelet_score, anticoagulant_score, indication_score, triple_combo_flag, high_risk_flag, ppi_reduction, graph_size="12,12"):
         try:
-            dot = graphviz.Digraph(comment='PPI Deprescribing Algorithm', 
-                                  graph_attr={'rankdir': 'TB', 
+            dot = graphviz.Digraph(comment='PPI Deprescribing Algorithm',
+                                  graph_attr={'rankdir': 'TB',
                                             'size': graph_size,
                                             'splines': 'ortho',
                                             'nodesep': '0.8',
@@ -1704,137 +1938,137 @@ with st.expander("📊 View Detailed Deprescribing Flowchart"):
                                             'bgcolor': 'transparent',
                                             'pad': '0.5',
                                             'margin': '0.5'})
-            
+
             # Style definitions with enhanced colors and formatting
             dot.attr('node', shape='box', style='rounded,filled', fontname='Arial', margin='0.3')
             dot.attr('edge', fontname='Arial', fontsize='11', penwidth='1.5')
-        
+
             # Initial Assessment with better formatting
-            dot.node('start', 'Initial PPI Assessment\n(Current Therapy)', 
-                    fillcolor='#d7e1ec', 
+            dot.node('start', 'Initial PPI Assessment\n(Current Therapy)',
+                    fillcolor='#d7e1ec',
                     style='rounded,filled,radial',
                     gradientangle='45',
                     penwidth='2',
                     color='#155799')
-            
+
             # Risk Score node with detailed breakdown
-            risk_details = f'Risk Score Calculation\n───────────────\nTotal Score: {score}\nMedication Risk: {nsaid_score + antiplatelet_score + anticoagulant_score}\nIndication Score: {indication_score}'
-            dot.node('risk_calc', risk_details, 
-                    shape='diamond', 
+            risk_details = f'Risk Score Calculation\n───────────────\nTotal Score: {score:.2f}\nMedication Risk: {nsaid_score + antiplatelet_score + anticoagulant_score}\nIndication Score: {indication_score}' # Added formatting for score
+            dot.node('risk_calc', risk_details,
+                    shape='diamond',
                     fillcolor='#159957',
                     style='filled,radial',
                     gradientangle='45',
                     penwidth='2',
                     color='#155799')
-            
+
             # Risk Components subgraph with improved layout
             with dot.subgraph(name='cluster_0') as c:
-                c.attr(label='Risk Components', 
-                      style='rounded,filled', 
-                      fillcolor='transparent', 
+                c.attr(label='Risk Components',
+                      style='rounded,filled',
+                      fillcolor='transparent',
                       color='#155799',
                       fontname='Arial',
                       fontsize='12',
                       penwidth='2')
-                c.node('med_risk', f'Medication Risk\n───────────\nNSAID: {nsaid_score}\nAntiplatelet: {antiplatelet_score}\nAnticoagulant: {anticoagulant_score}', 
+                c.node('med_risk', f'Medication Risk\n───────────\nNSAID: {nsaid_score}\nAntiplatelet: {antiplatelet_score}\nAnticoagulant: {anticoagulant_score}',
                       fillcolor='#d7e1ec',
                       style='filled,radial',
                       gradientangle='45',
                       penwidth='2',
                       color='#155799')
-                c.node('comb_risk', f'Combination Risk\n───────────\nTriple Therapy: {triple_combo_flag}\nHigh Risk Flag: {high_risk_flag}', 
+                c.node('comb_risk', f'Combination Risk\n───────────\nTriple Therapy: {triple_combo_flag}\nHigh Risk Flag: {high_risk_flag}',
                       fillcolor='#d7e1ec',
                       style='filled,radial',
                       gradientangle='45',
                       penwidth='2',
                       color='#155799')
-                c.node('ppi_effect', f'PPI Protection\n───────────\nReduction: {ppi_reduction}', 
+                c.node('ppi_effect', f'PPI Protection\n───────────\nReduction: {ppi_reduction}',
                       fillcolor='#d7e1ec',
                       style='filled,radial',
                       gradientangle='45',
                       penwidth='2',
                       color='#155799')
-            
+
             # Enhanced Decision Pathways with clearer color coding
-            if score <= 3:
-                dot.node('decision', 'Low Risk\nConsider Deprescribing', 
+            if score < 4: # Adjusted threshold to align with score calculation and noise
+                dot.node('decision', 'Low Risk\nConsider Deprescribing',
                         fillcolor='#159957',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#155799')
-                dot.node('action', '• Gradual dose reduction\n• Switch to PRN dosing\n• Monitor symptoms\n• Review in 4-8 weeks', 
+                dot.node('action', '• Gradual dose reduction\n• Switch to PRN dosing\n• Monitor symptoms\n• Review in 4-8 weeks',
                         fillcolor='#d7e1ec',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#155799')
-            elif 4 <= score <= 6:
-                dot.node('decision', 'Moderate Risk\nStep-down Therapy', 
+            elif 4 <= score < 7: # Adjusted threshold
+                dot.node('decision', 'Moderate Risk\nStep-down Therapy',
                         fillcolor='#155799',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#159957')
-                dot.node('action', '• Reduce to minimum effective dose\n• Consider alternate day dosing\n• Weekly monitoring\n• Review in 4 weeks', 
+                dot.node('action', '• Reduce to minimum effective dose\n• Consider alternate day dosing\n• Weekly monitoring\n• Review in 4 weeks',
                         fillcolor='#d7e1ec',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#155799')
-            elif 7 <= score <= 9:
-                dot.node('decision', 'High Risk\nOptimize Therapy', 
+            elif 7 <= score < 10: # Adjusted threshold
+                dot.node('decision', 'High Risk\nOptimize Therapy',
                         fillcolor='#ff8c42',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#ff6f00')
-                dot.node('action', '• Maintain current dose\n• Regular monitoring\n• Review drug interactions\n• Reassess in 6-8 weeks', 
+                dot.node('action', '• Maintain current dose\n• Regular monitoring\n• Review drug interactions\n• Reassess in 6-8 weeks',
                         fillcolor='#d7e1ec',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#155799')
-            else:
-                dot.node('decision', 'Very High Risk\nContinue Therapy', 
+            else: # score >= 10
+                dot.node('decision', 'Very High Risk\nContinue Therapy',
                         fillcolor='#ff6f00',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#ff8c42')
-                dot.node('action', '• Continue current regimen\n• Monthly monitoring\n• Specialist consultation\n• Review in 3 months', 
+                dot.node('action', '• Continue current regimen\n• Monthly monitoring\n• Specialist consultation\n• Review in 3 months',
                         fillcolor='#d7e1ec',
                         style='filled,radial',
                         gradientangle='45',
                         penwidth='2',
                         color='#155799')
-            
+
             # Enhanced edge connections with better labeling
-            dot.edge('start', 'risk_calc', 'Initial Assessment', 
+            dot.edge('start', 'risk_calc', 'Initial Assessment',
                     color='#155799',
                     penwidth='2')
-            dot.edge('risk_calc', 'med_risk', 'Risk Analysis', 
+            dot.edge('risk_calc', 'med_risk', 'Risk Analysis',
                     color='#155799',
                     penwidth='2')
-            dot.edge('risk_calc', 'comb_risk', 'Risk Factors', 
+            dot.edge('risk_calc', 'comb_risk', 'Risk Factors',
                     color='#155799',
                     penwidth='2')
-            dot.edge('risk_calc', 'ppi_effect', 'Protection Assessment', 
+            dot.edge('risk_calc', 'ppi_effect', 'Protection Assessment',
                     color='#155799',
                     penwidth='2')
-            dot.edge('med_risk', 'decision', 'Risk Level', 
+            dot.edge('med_risk', 'decision', 'Risk Level',
                     color='#155799',
                     penwidth='2')
-            dot.edge('comb_risk', 'decision', 'Combined Risk', 
+            dot.edge('comb_risk', 'decision', 'Combined Risk',
                     color='#155799',
                     penwidth='2')
-            dot.edge('ppi_effect', 'decision', 'Protection Level', 
+            dot.edge('ppi_effect', 'decision', 'Protection Level',
                     color='#155799',
                     penwidth='2')
-            dot.edge('decision', 'action', 'Management Plan', 
+            dot.edge('decision', 'action', 'Management Plan',
                     color='#155799',
                     penwidth='2')
-        
+
             return dot
         except Exception as e:
             st.error(f"Error generating flowchart: {e}")
@@ -1851,7 +2085,7 @@ with st.expander("📊 View Detailed Deprescribing Flowchart"):
         high_risk_flag=high_risk_flag,
         ppi_reduction=ppi_reduction
     )
-    
+
     if flowchart:
         # Center the flowchart
         st.markdown("""
@@ -1874,8 +2108,8 @@ with st.expander("📊 View Detailed Deprescribing Flowchart"):
         ">
             <h4 style="color: #155799; margin-bottom: 15px; font-family: 'Arial', sans-serif; text-align: center;">Flowchart Legend</h4>
             <div style="
-                display: grid; 
-                grid-template-columns: repeat(2, 1fr); 
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
                 max-width: 700px;
                 margin: 0 auto;
@@ -1975,7 +2209,7 @@ fig_bar.add_trace(go.Bar(
 # Update layout with professional styling
 fig_bar.update_layout(
     title={
-        'text': f"Risk Component Analysis (Total Score: {score})",
+        'text': f"Risk Component Analysis (Total Score: {score:.2f})", # Added formatting for score
         'y':0.95,
         'x':0.5,
         'xanchor': 'center',
@@ -2028,8 +2262,8 @@ st.markdown("""
 ">
     <h4 style="color: #155799; margin-bottom: 15px;">📊 Risk Analysis Interpretation</h4>
     <p style="color: #333; line-height: 1.6;">
-        This chart breaks down the contribution of each factor to your total risk score. 
-        Higher bars indicate greater risk contribution from that component. 
+        This chart breaks down the contribution of each factor to your total risk score.
+        Higher bars indicate greater risk contribution from that component.
         The PPI Protection factor appears as a negative value (below the axis) as it reduces the overall risk score.
     </p>
 </div>
@@ -2043,8 +2277,9 @@ if st.button("Log Input Data"):
     input_data = {
         "PPI": selected_ppi, "PPI Dose": ppi_dose, "PPI Route": ppi_route,
         "NSAID": selected_nsaid, "NSAID Dose": nsaid_dose, "NSAID Route": nsaid_route,
-        "Antiplatelet": selected_antiplatelet, "Antiplatelet Dose": antiplatelet_dose, "Antiplatelet Route": antiplatelet_route,
-        "Anticoagulant": selected_anticoagulant, "Anticoagulant Dose": anticoagulant_dose, "Anticoagulant Route": anticoagulant_route,
+        "Antiplatelet": selected_antiplatelet, "Antiplatelet Dose": antiplatelet_dose, "Antiplatelet Route": antiplatelet_route, # Include dose/route for AP
+        "Anticoagulant": selected_anticoagulant, "Anticoagulant Dose": anticoagulant_dose_value, "Anticoagulant Route": anticoagulant_route, "Anticoagulant Regimen": anticoagulant_regimen, # Include dose/route/regimen for AC
+        "Previous PPI History": previous_ppi_history, "Oral PPI Duration (days)": ppi_duration_days, # Log new history inputs
         "Indications": ", ".join(selected_indications), "Score": score
     }
     st.session_state.logged_data.append(input_data)
@@ -2062,61 +2297,99 @@ if st.session_state.logged_data:
 @st.cache_data
 def generate_synthetic_data(num_samples=1000):
     data = []
+    # Define possible dose/route/regimen options for synthetic data generation
+    antiplatelet_options_synth = {
+        "None": {"dose": [0], "route": ["None"]},
+        "Aspirin": {"dose": [75, 150, 300, 325], "route": ["Oral"]},
+        "Clopidogrel": {"dose": [75, 300, 600], "route": ["Oral"]},
+        "Ticagrelor": {"dose": [60, 90, 180], "route": ["Oral"]},
+        "Prasugrel": {"dose": [5, 10, 60], "route": ["Oral"]},
+        "Dipyridamole": {"dose": [75, 200], "route": ["Oral"]},
+        "Ticlopidine": {"dose": [250, 500], "route": ["Oral"]},
+        "Abciximab": {"dose": [0.25, 0.125], "route": ["IV"]}, # Simplified dose representation
+        "Eptifibatide": {"dose": [180, 2], "route": ["IV"]}, # Simplified dose representation
+        "Tirofiban": {"dose": [0.4, 0.15], "route": ["IV"]} # Simplified dose representation
+    }
+    anticoagulant_options_synth = {
+        "None": {"dose": [0], "route": ["None"], "regimen": ["None"]},
+        "Unfractionated Heparin (UFH)": {"dose": [5000, 20000], "route": ["IV", "Subcutaneous"], "regimen": ["Prophylactic", "Therapeutic"]}, # Simplified dose
+        "Low Molecular Weight Heparin (LMWH) (Enoxaparin)": {"dose": [30, 40, 80], "route": ["Subcutaneous"], "regimen": ["Prophylactic", "Therapeutic"]}, # Simplified dose
+        "Dalteparin": {"dose": [2500, 5000, 10000], "route": ["Subcutaneous"], "regimen": ["Prophylactic", "Therapeutic"]}, # Simplified dose
+        "Fondaparinux": {"dose": [2.5, 5, 7.5, 10], "route": ["Subcutaneous"], "regimen": ["None"]},
+        "Argatroban": {"dose": [0.5, 5, 10], "route": ["IV"], "regimen": ["None"]}, # Simplified dose
+        "Bivalirudin": {"dose": [0.75, 1.5, 2.5], "route": ["IV"], "regimen": ["None"]} # Simplified dose
+    }
+
+
     for _ in range(num_samples):
         ppi = random.choice(["None", "Pantoprazole", "Omeprazole", "Esomeprazole", "Rabeprazole"])
         ppi_dose = random.choice([0, 20, 40, 80])
         ppi_route = random.choice(["None", "Oral", "IV"])
-        
+
         nsaid_group = random.choice(list(nsaid_groups.keys()))
         nsaid = random.choice(list(nsaid_groups[nsaid_group].keys()))
         nsaid_info = nsaid_groups[nsaid_group][nsaid]
-        nsaid_dose = random.choice(nsaid_info[0])
+        nsaid_dose_val = random.choice(nsaid_info[0])
         nsaid_route = random.choice(["None", "Oral", "Parenteral"])
-        
-        antiplatelet = random.choice(list(antiplatelet_dose_ranges.keys()))
-        antiplatelet_dose = random.choice(antiplatelet_dose_ranges[antiplatelet][0])
-        antiplatelet_route = random.choice(["None", "Oral"])
-        
-        anticoagulant = random.choice(["None", "Warfarin", "Heparin", "Enoxaparin"])
-        anticoagulant_dose = random.choice(["None", "Low Dose", "Moderate Dose", "High Dose"])
-        anticoagulant_route = random.choice(["None", "Oral", "IV", "Subcutaneous"])
-        
+
+        selected_antiplatelet_synth = random.choice(list(antiplatelet_options_synth.keys()))
+        antiplatelet_dose_synth = random.choice(antiplatelet_options_synth[selected_antiplatelet_synth]["dose"])
+        antiplatelet_route_synth = random.choice(antiplatelet_options_synth[selected_antiplatelet_synth]["route"])
+
+        selected_anticoagulant_synth = random.choice(list(anticoagulant_options_synth.keys()))
+        anticoagulant_dose_synth = random.choice(anticoagulant_options_synth[selected_anticoagulant_synth]["dose"])
+        anticoagulant_route_synth = random.choice(anticoagulant_options_synth[selected_anticoagulant_synth]["route"])
+        anticoagulant_regimen_synth = random.choice(anticoagulant_options_synth[selected_anticoagulant_synth]["regimen"])
+
+        # Generate synthetic history data
+        previous_ppi_history_synth = random.choice([True, False])
+        ppi_duration_days_synth = random.randint(0, 3650) if previous_ppi_history_synth else 0
+
+
         num_indications = random.randint(0, 5)
         # Corrected merging of dictionaries
         all_indications = {**gi_indications, **nsaid_ap_indications, **other_indications}
         indications = random.sample(list(all_indications.keys()), num_indications)
-        
-        # Calculate synthetic scores
-        nsaid_score = get_nsaid_score(nsaid_dose, nsaid_info[2], nsaid_info[3]) if nsaid != "None" else 0
-        antiplatelet_score = get_antiplatelet_score(antiplatelet_dose)
-        anticoagulant_score = {"None": 0, "Low Dose": 1, "Moderate Dose": 2, "High Dose": 3}[anticoagulant_dose]
-        
+
+        # Calculate synthetic scores based on new logic
+        nsaid_score = get_nsaid_score(nsaid_dose_val, nsaid_info[2], nsaid_info[3]) if nsaid != "None" else 0
+        antiplatelet_score = get_antiplatelet_score(selected_antiplatelet_synth, antiplatelet_dose_synth, antiplatelet_route_synth)
+        anticoagulant_score = get_anticoagulant_score(selected_anticoagulant_synth, anticoagulant_dose_synth, anticoagulant_route_synth, anticoagulant_regimen_synth)
+
+
         nsaid_flag = int(nsaid != "None")
-        antiplatelet_flag = int(antiplatelet != "None")
-        anticoagulant_flag = int(anticoagulant != "None")
+        antiplatelet_flag = int(selected_antiplatelet_synth != "None")
+        anticoagulant_flag = int(selected_anticoagulant_synth != "None")
         triple_combo_flag = int(nsaid_flag and antiplatelet_flag and anticoagulant_flag)
-        
+
         indication_score = sum(indication_weights.get(ind, 0) for ind in indications)
+        # Corrected typo here: antiplateplatelet_score -> antiplatelet_score
         medication_risk = nsaid_score + antiplatelet_score + anticoagulant_score
-        high_risk_flag = int(medication_risk >= 6 or indication_score >= 6)
-        
+        high_risk_flag = int(medication_risk >= 6 or indication_score >= 6) # Threshold might need adjustment with new scoring
+
         ppi_reduction = get_ppi_gastroprotection(ppi_dose, ppi_route, nsaid_flag, antiplatelet_flag, anticoagulant_flag)
-        
+
         score = medication_risk + indication_score + (triple_combo_flag * 2) + high_risk_flag + ppi_reduction
-        
+
+        # Add noise to the score
+        noise = random.uniform(-1.0, 1.0) # Add random noise between -1 and +1
+        score = max(0, score + noise) # Ensure score remains non-negative
+
         data.append({
             "PPI": ppi, "PPI Dose": ppi_dose, "PPI Route": ppi_route,
-            "NSAID": nsaid, "NSAID Dose": nsaid_dose, "NSAID Route": nsaid_route,
-            "Antiplatelet": antiplatelet, "Antiplatelet Dose": antiplatelet_dose, "Antiplatelet Route": antiplatelet_route,
-            "Anticoagulant": anticoagulant, "Anticoagulant Dose": anticoagulant_dose, "Anticoagulant Route": anticoagulant_route,
+            "NSAID": nsaid, "NSAID Dose": nsaid_dose_val, "NSAID Route": nsaid_route,
+            "Antiplatelet": selected_antiplatelet_synth, "Antiplatelet Dose": antiplatelet_dose_synth, "Antiplatelet Route": antiplatelet_route_synth,
+            "Anticoagulant": selected_anticoagulant_synth, "Anticoagulant Dose": anticoagulant_dose_synth, "Anticoagulant Route": anticoagulant_route_synth, "Anticoagulant Regimen": anticoagulant_regimen_synth,
+            "Previous PPI History": previous_ppi_history_synth, "Oral PPI Duration (days)": ppi_duration_days_synth, # Include new history fields
             "Indications": ", ".join(indications), "Score": score
         })
     return pd.DataFrame(data)
 
+
 @st.cache_data
 def train_and_evaluate_models(data):
     X = data.drop("Score", axis=1)
-    y = (data["Score"] >= 4).astype(int)  # Binary classification: High Risk (1) or Low/Moderate Risk (0)
+    y = (data["Score"] >= 7).astype(int)  # Binary classification: High Risk (1) or Lower Risk (0) - Adjusted threshold based on potential new score range
     X = pd.get_dummies(X)  # One hot encode categorical data
 
     smote = SMOTE(random_state=42)
@@ -2168,35 +2441,35 @@ col1, col2 = st.columns(2)
 with col1:
     fig_rf, ax_rf = plt.subplots(figsize=(6, 5), facecolor='#f4f6f8')
     ax_rf.set_facecolor('#f4f6f8')
-    
+
     # Plot ROC curve with enhanced styling
     ax_rf.plot(rf_fpr, rf_tpr, linewidth=2.5, color='#155799', alpha=0.8, label='Random Forest')
     ax_rf.fill_between(rf_fpr, rf_tpr, alpha=0.1, color='#155799')
-    
+
     # Add diagonal line with styling
     ax_rf.plot([0, 1], [0, 1], "k--", linewidth=1.5, alpha=0.7)
-    
+
     # Customize grid
     ax_rf.grid(True, linestyle='--', alpha=0.3)
-    
+
     # Customize labels and title
     ax_rf.set_xlabel("False Positive Rate", fontsize=10, color='#333333')
     ax_rf.set_ylabel("True Positive Rate", fontsize=10, color='#333333')
     ax_rf.set_title("Random Forest ROC Curve", fontsize=12, color='#155799', pad=15)
-    
+
     # Customize ticks
     ax_rf.tick_params(colors='#333333')
-    
+
     # Add legend with styling
     ax_rf.legend(loc='lower right', frameon=True, facecolor='white', edgecolor='#155799')
-    
+
     # Add AUC score annotation
-    ax_rf.annotate(f'AUC = {rf_metrics["AUC"]:.3f}', 
-                  xy=(0.05, 0.95), 
+    ax_rf.annotate(f'AUC = {rf_metrics["AUC"]:.3f}',
+                  xy=(0.05, 0.95),
                   xycoords='axes fraction',
                   bbox=dict(boxstyle="round,pad=0.3", fc='white', ec='#155799', alpha=0.8),
                   fontsize=10)
-    
+
     # Adjust layout
     plt.tight_layout()
     st.pyplot(fig_rf)
@@ -2204,35 +2477,35 @@ with col1:
 with col2:
     fig_lr, ax_lr = plt.subplots(figsize=(6, 5), facecolor='#f4f6f8')
     ax_lr.set_facecolor('#f4f6f8')
-    
+
     # Plot ROC curve with enhanced styling
     ax_lr.plot(lr_fpr, lr_tpr, linewidth=2.5, color='#159957', alpha=0.8, label='Logistic Regression')
     ax_lr.fill_between(lr_fpr, lr_tpr, alpha=0.1, color='#159957')
-    
+
     # Add diagonal line with styling
     ax_lr.plot([0, 1], [0, 1], "k--", linewidth=1.5, alpha=0.7)
-    
+
     # Customize grid
     ax_lr.grid(True, linestyle='--', alpha=0.3)
-    
+
     # Customize labels and title
     ax_lr.set_xlabel("False Positive Rate", fontsize=10, color='#333333')
     ax_lr.set_ylabel("True Positive Rate", fontsize=10, color='#333333')
     ax_lr.set_title("Logistic Regression ROC Curve", fontsize=12, color='#159957', pad=15)
-    
+
     # Customize ticks
     ax_lr.tick_params(colors='#333333')
-    
+
     # Add legend with styling
     ax_lr.legend(loc='lower right', frameon=True, facecolor='white', edgecolor='#159957')
-    
+
     # Add AUC score annotation
-    ax_lr.annotate(f'AUC = {lr_metrics["AUC"]:.3f}', 
-                  xy=(0.05, 0.95), 
+    ax_lr.annotate(f'AUC = {lr_metrics["AUC"]:.3f}',
+                  xy=(0.05, 0.95),
                   xycoords='axes fraction',
                   bbox=dict(boxstyle="round,pad=0.3", fc='white', ec='#159957', alpha=0.8),
                   fontsize=10)
-    
+
     # Adjust layout
     plt.tight_layout()
     st.pyplot(fig_lr)
@@ -2343,7 +2616,7 @@ st.markdown("""
         div[data-testid="stTable"] table {
             font-size: 14px;
         }
-        
+
         div[data-testid="stTable"] th,
         div[data-testid="stTable"] td {
             padding: 8px 12px;
@@ -2363,7 +2636,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # When displaying metrics table, use st.table instead of dataframe
-metrics_df = pd.DataFrame([rf_metrics, lr_metrics], 
+metrics_df = pd.DataFrame([rf_metrics, lr_metrics],
                          index=["Random Forest", "Logistic Regression"])
 metrics_df = metrics_df.round(3)
 
@@ -2416,7 +2689,7 @@ st.markdown("""
     padding: 25px 30px;
     border-radius: 15px;
     margin-top: 20px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.1);
 ">
     <h4 style="color: #003366; margin-bottom: 15px;">📘 Model Training Summary</h4>
     <ul style="color: #333333; font-size: 16px; line-height: 1.8;">
@@ -2460,13 +2733,13 @@ st.markdown("""
 col1, col2 = st.columns(2)  # Equal width columns
 
 with col1:
-    email = st.text_input("📧 Email Address", 
+    email = st.text_input("📧 Email Address",
                          placeholder="your.email@example.com",
                          help="We'll only use this to follow up if needed",
                          key="email_input")
-    
+
 with col2:
-    recommendations = st.text_input("💭 Recommendations", 
+    recommendations = st.text_input("💭 Recommendations",
                                   placeholder="Share your suggestions for improvement...",
                                   help="Your insights help us enhance the tool",
                                   key="recommendations_input")
@@ -2474,7 +2747,7 @@ with col2:
 # Submit Button with Custom Styling
 st.markdown("""
 <style>
-.stButton > button {
+div.stButton > button {
     width: 200px;
     margin: 0 auto;
     display: block;
@@ -2486,7 +2759,7 @@ st.markdown("""
     font-weight: 600;
     transition: all 0.3s ease;
 }
-.stButton > button:hover {
+div.stButton > button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(21, 87, 153, 0.2);
 }
