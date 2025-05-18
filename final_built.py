@@ -2773,6 +2773,6 @@ st.markdown("""
     border-top: 1px solid rgba(65, 90, 119, 0.2);
     margin-top: 20px;
 ">
-    Copyright © 2023 Dr. Nabyendu Biswas
+    Copyright © 2025 MEDAI Labs
 </div>
 """, unsafe_allow_html=True)
