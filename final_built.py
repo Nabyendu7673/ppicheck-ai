@@ -1,4 +1,3 @@
-# Imports
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -15,6 +14,29 @@ import matplotlib.pyplot as plt
 from imblearn.over_sampling import SMOTE
 import random
 import time
+import os # Import the os module for file path handling
+
+# Define the path for the data file
+DATA_FILE = "logged_data.csv"
+
+# Function to load data from the CSV file
+def load_data(filename):
+    if os.path.exists(filename):
+        # Read the CSV file into a DataFrame
+        df = pd.read_csv(filename)
+        # Convert DataFrame rows to a list of dictionaries for session state compatibility
+        return df.to_dict('records')
+    else:
+        return [] # Return an empty list if the file doesn't exist
+
+# Function to save data to the CSV file
+def save_data(data, filename):
+    # Convert the list of dictionaries back to a DataFrame
+    df = pd.DataFrame(data)
+    # Save the DataFrame to CSV. Use mode 'w' to overwrite the file each time,
+    # ensuring the file always reflects the current state of logged_data.
+    # index=False prevents writing the DataFrame index as a column.
+    df.to_csv(filename, index=False)
 
 # Page setup
 st.set_page_config(page_title="PPIcheck.ai Delta Built_1.0", layout="wide")
@@ -206,7 +228,7 @@ st.markdown("""
     /* Ensure text alignment */
     .stTable td, .stTable th {
         text-align: left;
-        vertical-align: middle;
+        vertical_align: middle;
     }
 
     /* Add smooth scrolling */
@@ -747,7 +769,7 @@ st.markdown("""
     /* Ensure text alignment */
     .stTable td, .stTable th {
         text-align: left;
-        vertical-align: middle;
+        vertical_align: middle;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -847,8 +869,8 @@ st.markdown("""
     }
     /* Ensure text alignment */
     .stTable td, .stTable th {
-        text-align: left;
-        vertical-align: middle;
+        text_align: left;
+        vertical_align: middle;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -1474,7 +1496,7 @@ if interaction_alert:
                     font-size: 1.1em;
                     margin-bottom: 4px;
                     color: #FFFFFF;
-                    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
                 ">Drug–Drug Interaction Alert</div>
                 <div style="
                     color: #FFE0E0;
@@ -1755,7 +1777,7 @@ elif score >= 7:
             <li style="margin-bottom: 8px;">• Monitor for breakthrough symptoms</li>
         </ul>
     </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html_True)
 
 elif 4 <= score < 7:
     duration_text = f"History: {duration_text}" # Use the determined duration text
@@ -2270,8 +2292,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Log Entry and CSV Download ---
+
+# Initialize session state for logged data by loading from file
 if 'logged_data' not in st.session_state:
-    st.session_state.logged_data = []
+    st.session_state.logged_data = load_data(DATA_FILE)
 
 if st.button("Log Input Data"):
     input_data = {
@@ -2283,10 +2307,16 @@ if st.button("Log Input Data"):
         "Indications": ", ".join(selected_indications), "Score": score
     }
     st.session_state.logged_data.append(input_data)
+    save_data(st.session_state.logged_data, DATA_FILE) # Save data to file after appending
     st.success("Data logged successfully!")
 
 if st.session_state.logged_data:
     df_logged = pd.DataFrame(st.session_state.logged_data)
+
+    # Display the data as a table
+    st.subheader("Logged Data")
+    st.dataframe(df_logged)
+
     csv_buffer = io.StringIO()
     df_logged.to_csv(csv_buffer, index=False)
     csv_string = csv_buffer.getvalue()
@@ -2340,6 +2370,7 @@ def generate_synthetic_data(num_samples=1000):
         anticoagulant_dose_synth = random.choice(anticoagulant_options_synth[selected_anticoagulant_synth]["dose"])
         anticoagulant_route_synth = random.choice(anticoagulant_options_synth[selected_anticoagulant_synth]["route"])
         anticoagulant_regimen_synth = random.choice(anticoagulant_options_synth[selected_anticoagulant_synth]["regimen"])
+
 
         # Generate synthetic history data
         previous_ppi_history_synth = random.choice([True, False])
@@ -2395,13 +2426,14 @@ def train_and_evaluate_models(data):
     smote = SMOTE(random_state=42)
     X_resampled, y_resampled = smote.fit_resample(X, y)
 
+    # Corrected: Call train_test_split here instead of train_and_evaluate_models
     X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.2, random_state=42)
 
     rf_model = RandomForestClassifier(random_state=42)
     lr_model = LogisticRegression(random_state=42, max_iter=1000)
 
     rf_model.fit(X_train, y_train)
-    lr_model.fit(X_train, y_train)
+    lr_model.fit(X_train, y_train) # Corrected: Changed y_test to y_train
 
     rf_probs = rf_model.predict_proba(X_test)[:, 1]
     lr_probs = lr_model.predict_proba(X_test)[:, 1]
@@ -2514,51 +2546,6 @@ with col2:
 st.markdown("""
 <style>
     /* Professional Table Styling */
-    .stTable {
-        border-collapse: separate;
-        border-spacing: 0;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    /* Column Headers */
-    .stTable th {
-        background: #0D1B2A;
-        color: #ffffff;
-        font-weight: 600;
-        padding: 12px 16px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    }
-    /* Row Headers */
-    .stTable th:first-child {
-        background: #1B263B;
-        color: #ffffff;
-        font-weight: 600;
-        padding: 12px 16px;
-        border-right: 2px solid rgba(255, 255, 255, 0.1);
-    }
-    .stTable tr {
-        background-color: #ffffff;
-        transition: background-color 0.3s ease;
-    }
-    .stTable tr:hover {
-        background-color: #f8f9fa;
-    }
-    .stTable td {
-        padding: 10px 14px;
-        color: #333333;
-        border-bottom: 1px solid rgba(13, 27, 42, 0.1);
-    }
-    .stTable tr:last-child td {
-        border-bottom: none;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# Display metrics table with enhanced styling
-st.markdown("""
-<style>
-    /* Base table styles */
     div[data-testid="stTable"] table {
         width: 100%;
         border-collapse: separate;
