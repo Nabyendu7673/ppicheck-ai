@@ -39,7 +39,7 @@ def save_data(data, filename):
     df.to_csv(filename, index=False)
 
 # Page setup
-st.set_page_config(page_title="PPIcheck.ai Delta Built_1.0", layout="wide")
+st.set_page_config(page_title="PPIcheck.ai", layout="wide")
 
 # Update the CSS section with more visible colors
 st.markdown("""
