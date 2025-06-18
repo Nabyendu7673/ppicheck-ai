@@ -399,7 +399,7 @@ st.markdown("""
 
 <div class="title-container">
     <div class="main-title">
-        PPIcheck.ai Delta Built_1.0
+        PPIcheck.ai
     </div>
     <div class="subtitle">
         <div class="headline">India's First Indigenously-Built AI Tool for Optimizing PPI Therapy</div>
