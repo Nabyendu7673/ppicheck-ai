@@ -39,7 +39,7 @@ def save_data(data, filename):
     df.to_csv(filename, index=False)
 
 # Page setup
-st.set_page_config(page_title="PPIcheck.ai", layout="wide")
+st.set_page_config(page_title="PPIcheck.ai Delta Built_1.0", layout="wide")
 
 # Update the CSS section with more visible colors
 st.markdown("""
@@ -399,11 +399,16 @@ st.markdown("""
 
 <div class="title-container">
     <div class="main-title">
-        PPIcheck.ai
+        PPIcheck.ai Delta Built_1.0
     </div>
     <div class="subtitle">
         <div class="headline">India's First Indigenously-Built AI Tool for Optimizing PPI Therapy</div>
         <br>
+        <div class="description">
+        PPIcheck.ai is revolutionizing the way clinicians make PPI deprescribing decisions.
+        <br><br>
+        Our application combines established clinical guidelines with cutting-edge machine learning to provide evidence-based risk assessments, enabling healthcare professionals to optimize PPI therapy effectively.
+        </div>
         <br><br>
         <span style="font-weight: 500;">
             Developed by Dr. Nabyendu Biswas, Department of Pharmacology, in collaboration with the Medicine Department, MKCG Medical College & Hospital
@@ -2768,6 +2773,6 @@ st.markdown("""
     border-top: 1px solid rgba(65, 90, 119, 0.2);
     margin-top: 20px;
 ">
-    Copyright © 2025 MEDAI Labs
+    Copyright © 2023 Dr. Nabyendu Biswas
 </div>
 """, unsafe_allow_html=True)
