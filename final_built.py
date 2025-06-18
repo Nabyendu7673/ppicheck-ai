@@ -404,11 +404,6 @@ st.markdown("""
     <div class="subtitle">
         <div class="headline">India's First Indigenously-Built AI Tool for Optimizing PPI Therapy</div>
         <br>
-        <div class="description">
-        PPIcheck.ai is revolutionizing the way clinicians make PPI deprescribing decisions.
-        <br><br>
-        Our application combines established clinical guidelines with cutting-edge machine learning to provide evidence-based risk assessments, enabling healthcare professionals to optimize PPI therapy effectively.
-        </div>
         <br><br>
         <span style="font-weight: 500;">
             Developed by Dr. Nabyendu Biswas, Department of Pharmacology, in collaboration with the Medicine Department, MKCG Medical College & Hospital
